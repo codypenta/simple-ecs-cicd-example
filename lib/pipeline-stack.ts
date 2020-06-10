@@ -80,7 +80,8 @@ export class PipelineStack extends cdk.Stack {
         new pipelineactions.EcsDeployAction({
           actionName: 'DeployContainer',
           service: service.service,
-          input: outputDockerBuild
+          // input: outputDockerBuild,
+          imageFile: new codepipeline.ArtifactPath(outputDockerBuild, 'imagedefinition.json')
         })
       ]
     })

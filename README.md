@@ -18,3 +18,4 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - https://github.com/cloudcomponents/cdk-constructs
 - https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
 - https://opensource.com/article/18/8/what-how-makefile
+- https://github.com/aws-samples/aws-reinvent-2019-trivia-game
