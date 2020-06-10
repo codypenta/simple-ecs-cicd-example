@@ -7,19 +7,14 @@ import * as pipelineactions from '@aws-cdk/aws-codepipeline-actions';
 import * as ecr from '@aws-cdk/aws-ecr';
 import * as ecs from '@aws-cdk/aws-ecs';
 import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
-import * as path from 'path';
 
 export class PipelineStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // ====================== Source ================================
-    const repo = new codecommit.Repository(this, 'Repo', {
-      repositoryName: 'MorphinTime',
-      description: "Code repo holding morphin code"
-    })
-
-    const imageRepo = new ecr.Repository(this, 'ImageRepo')
+    const repo = codecommit.Repository.fromRepositoryName(this, 'CodeRepo', 'MorphinTime')
+    const imageRepo = ecr.Repository.fromRepositoryName(this, 'ImageRepo', 'asset-image-3x1istwbfihr')
 
     // ====================== Build =================================
     const builder = new codebuild.Project(this, 'BuilderBox', {

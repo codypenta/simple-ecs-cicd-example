@@ -6,4 +6,4 @@ import { PipelineStack } from '../lib/pipeline-stack';
 
 const app = new cdk.App();
 const assetStack = new AssetStack(app, 'AssetStack');
-const pipelineStack = new PipelineStack(app, 'MorphinStack');
+const pipelineStack = new PipelineStack(app, 'PipelineStack');
