@@ -29,7 +29,7 @@ export class PipelineStack extends cdk.Stack {
           value: imageRepo.repositoryUri
         }
       },
-      buildSpec: codebuild.BuildSpec.fromSourceFilename(path.join(__dirname, '..', 'buildspec.yml'))
+      buildSpec: codebuild.BuildSpec.fromSourceFilename(path.join(__dirname, 'buildspec.yml'))
     })
 
     imageRepo.grantPullPush(builder)
