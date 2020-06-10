@@ -8,6 +8,12 @@ configure:
 	@echo "====== Configuring Git and ECR ======"
 	git config --global credential.helper cache
 
+troubleshoot-pipeline:
+	@echo "====== Troubleshooting Pipeline and Buildspec ======"
+	git add .
+	git commit -m "troubleshooting pipeline and buildspec file"
+	git push
+
 prime:
 	@echo "====== Priming The Line ======"
 	git add .
