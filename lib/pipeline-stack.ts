@@ -7,6 +7,7 @@ import * as pipelineactions from '@aws-cdk/aws-codepipeline-actions';
 import * as ecr from '@aws-cdk/aws-ecr';
 import * as ecs from '@aws-cdk/aws-ecs';
 import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
+import * as path from 'path'
 
 export class PipelineStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -28,7 +29,7 @@ export class PipelineStack extends cdk.Stack {
           value: imageRepo.repositoryUri
         }
       },
-      buildSpec: codebuild.BuildSpec.fromSourceFilename('buildspec.yml')
+      buildSpec: codebuild.BuildSpec.fromSourceFilename(path.join(__dirname, 'lib', 'buildspec.yml'))
     })
 
     imageRepo.grantPullPush(builder)
