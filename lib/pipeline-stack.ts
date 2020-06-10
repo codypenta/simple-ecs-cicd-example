@@ -65,7 +65,6 @@ export class PipelineStack extends cdk.Stack {
       ]
     })
 
-
     // ====================== Link Service and Deploy ==================================
     const service = new ecspatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
       cluster: new ecs.Cluster(this, 'Cluster'),
