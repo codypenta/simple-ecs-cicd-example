@@ -6,7 +6,7 @@ stage:
 
 configure:
 	@echo "====== Configuring Git and ECR ======"
-	git config --global credential.helper cache
+	git config --global credential.helper 'cache --timeout=3600'
 
 troubleshoot-pipeline:
 	@echo "====== Troubleshooting Pipeline and Buildspec ======"
