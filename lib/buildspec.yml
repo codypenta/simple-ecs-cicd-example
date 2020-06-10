@@ -14,7 +14,7 @@ phases:
     post_build:
         commands:
             - docker push $APP_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
-            - 'printf '{ "imageDefinition": "'$CODEBUILD_RESOLVED_SOURCE_VERSION'" }' > imagedefinition.json'
+            - echo "{\"imageDefinition\":\"$CODEBUILD_RESOLVED_SOURCE_VERSION\"}" > imagedefinition.json
 artifacts:
     files:
         - imagedefinition.json
