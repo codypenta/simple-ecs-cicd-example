@@ -20,9 +20,9 @@ prime:
 	git commit -m "initial commit"
 	# git remote add origin https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MorphinTime
 	# git push -u origin master
-	# aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 728666980118.dkr.ecr.us-east-1.amazonaws.com
-	# docker build lib/service/ -t 728666980118.dkr.ecr.us-east-1.amazonaws.com/asset-image-3x1istwbfihr:latest
-	# docker push 728666980118.dkr.ecr.us-east-1.amazonaws.com/asset-image-3x1istwbfihr:latest
+	# aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account id>.dkr.ecr.us-east-1.amazonaws.com
+	# docker build lib/service/ -t <account id>.dkr.ecr.us-east-1.amazonaws.com/asset-image-3x1istwbfihr:latest
+	# docker push <account id>.dkr.ecr.us-east-1.amazonaws.com/asset-image-3x1istwbfihr:latest
 
 make deploy:
 	@echo "====== Deploying the Pipeline Infrastructure and Fargate Service ======"
