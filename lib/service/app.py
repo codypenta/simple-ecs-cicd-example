@@ -69,7 +69,7 @@ app.layout = html.Div(
                             id="banner-title",
                             children=[
                                 html.A(
-                                    "Support Vector Machine (SVM) Explorer on Fargate",
+                                    "Support Vector Machine (SVM) Explorer",
                                     href="https://github.com/plotly/dash-svm",
                                     style={
                                         "text-decoration": "none",
