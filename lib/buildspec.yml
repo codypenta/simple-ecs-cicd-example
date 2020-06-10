@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            docker: 18
+    pre_build:
+        commands:
+            - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+    build:
+        commands:
+            - echo $APP_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
+            - docker build -t $APP_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION lib/service/
+    post_build:
+        commands:
+            - docker push $APP_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
+            - printf '{ "imageDefinition": "'$CODEBUILD_RESOLVED_SOURCE_VERSION'" }' > imagedefinition.json
+artifacts:
+    files:
+        - imagedefinition.json

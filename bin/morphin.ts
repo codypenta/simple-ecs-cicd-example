@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { MorphinStack } from '../lib/morphin-stack';
+import { AssetStack } from '../lib/assets-stack';
+import { PipelineStack } from '../lib/pipeline-stack';
 
 const app = new cdk.App();
-new MorphinStack(app, 'MorphinStack');
+const assetStack = new AssetStack(app, 'AssetStack');
+const pipelineStack = new PipelineStack(app, 'MorphinStack');
