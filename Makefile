@@ -4,6 +4,10 @@ stage:
 	@echo "====== Staging Repositories ======"
 	cdk deploy AssetStack
 
+configure:
+	@echo "====== Configuring Git and ECR ======"
+	git config --global credential.helper cache
+
 prime:
 	@echo "====== Priming The Line ======"
 	git add .
